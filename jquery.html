@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tickling Example</title>
+<style>
+    .person {
+        display: inline-block;
+        border: 2px solid rgb(243, 9, 9);
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="person" id="div1">
+    Grandparent
+    <div class="person" id="div2">
+        Parent
+        <div class="person" id="div3">
+            Child
+            <div class="person" id="div4">
+                Child
+                <div class="person" id="div5">
+                    Child
+                    <div class="person" id="div6">
+                        Child
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const grandparent = document.getElementById('grandparent');
+    const parent = document.getElementById('parent');
+    const child = document.getElementById('child');
+
+    grandparent.addEventListener('click', function(event) {
+        console.log('Tickling Grandparent!');
+    });
+
+    parent.addEventListener('click', function(event) {
+        console.log('Tickling Parent!');
+    });
+
+    child.addEventListener('click', function(event) {
+        console.log('Tickling Child!');
+    });
+</script>
+
+</body>
+</html>
